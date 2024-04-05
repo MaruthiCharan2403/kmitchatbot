@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';  // Import Axios
 import './App.css';
 import intents from './intents.json';
+// https://uniquekmitchatbot8.onrender.com/predict
 const App = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
@@ -58,7 +59,7 @@ const App = () => {
         {messages.map((message, index) => (
           <li key={index} className={message.sender}>
             {message.text}
-            {message.link ? <a href={message.link}>Click here</a> : null}
+            {message.link ? <a href={message.link} target="_blank" rel="noopener noreferrer">Click here</a>:null}
           </li>
         ))}
         <div ref={messagesEndRef} />
